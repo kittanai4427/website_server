@@ -265,14 +265,79 @@ body {
   
   .slider {
     display: flex;
-    align-items: flex-start;
+    align-items: flex-end;
     justify-content: center;
-
     width: 100%;
     overflow: hidden;
     position: relative;
-    height: auto; /* ปรับให้ความสูงอัตโนมัติตามเนื้อหา */
-    
+    height: auto;
+    z-index: 1;
+    height: 100vh;
+}
+
+.slider::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* ส่วนพื้นหลังที่เหลือ 60% ทางซ้าย */
+    height: 90%;
+    background-color: #F6F7F6; /* สีพื้นหลังสีน้ำเงินอ่อน */
+    z-index: -1; /* ให้พื้นหลังอยู่ด้านล่างของเนื้อหา */
+}
+
+.slider::after {
+    content: '';
+    position: absolute;
+    top: 10%;
+    right: 0;
+    width: 65%; /* ครอบคลุม 65% ของพื้นที่ด้านขวา */
+    height: 100%;
+    background-image: url('img/Group 388.png'); /* ใส่ URL ของรูปภาพที่คุณต้องการ */
+    background-size: cover; /* ปรับขนาดรูปให้ครอบคลุมพื้นที่ */
+    background-position: center; /* จัดรูปภาพให้อยู่ตรงกลาง */
+    background-repeat: no-repeat; /* ไม่ให้ภาพซ้ำ */
+    z-index: -1; /* ให้พื้นหลังอยู่ด้านล่างของเนื้อหา */
+}
+.slider-text {
+    display: flex;
+    justify-content: space-between; /* จัดข้อความให้อยู่ฝั่งซ้ายและขวา */
+    position: absolute;
+    top: 10%; /* ปรับตำแหน่งจากด้านบน */
+    left: 0;
+    width: 100%; /* ให้ความกว้างครอบคลุมทั้งหมด */
+    padding: 0 5%; /* เพิ่ม padding เพื่อให้ข้อความไม่ชิดขอบ */
+    color: #fff; /* สีข้อความ */
+    z-index: 1; /* ให้ข้อความอยู่เหนือพื้นหลัง */
+}
+
+.left-text {
+    text-align: left; /* จัดข้อความให้อยู่ทางซ้าย */
+    margin-top: 10px;
+    color: #000;
+}
+
+.right-text {
+    position: absolute;
+    right: 5%; /* ปรับให้ข้อความอยู่ภายในพื้นที่ของ .slider::after */
+    top: 10%; /* ปรับตำแหน่งจากด้านบน */
+    text-align: left; /* จัดข้อความให้อยู่ทางซ้าย */
+    color: #fff; /* สีของข้อความ */
+    z-index: 1; /* ให้ข้อความอยู่เหนือภาพพื้นหลัง */
+    width: 55%; /* ขยายความกว้างให้เหมาะสม */
+    padding-left: 20px; /* เพิ่มพื้นที่ห่างจากขอบ */
+}
+
+.left-text h1 {
+    font-size: 100px; /* ขนาดของข้อความหัวเรื่อง */
+    margin: 0;
+    font-weight: 500;
+    color: #5D5D5E;
+}
+
+.slider-text p {
+    font-size: 18px; /* ขนาดของคำบรรยาย */
+    margin: 37px 0 0;
 }
 
 /* ปรับสำหรับหน้าจอขนาดเล็ก (มือถือ) */
@@ -315,7 +380,6 @@ body {
         width: 70%; /* ปรับขนาดการ์ดให้พอดีกับแท็บเล็ต */
         height: auto;
         margin: 20px auto;
-        margin-left: 14px;
     }
 
     .btn {
