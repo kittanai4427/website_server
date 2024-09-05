@@ -1,0 +1,12 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "Launch Chrome against dist",
+            "file": "C:/Users/Me market think/Documents/GitHub/website_server/index.html", // ระบุพาธไปยังไฟล์ HTML ที่จะรัน
+            "webRoot": "C:/Users/Me market think/Documents*GitHub/website_server/index.html" // ระบุ webRoot เป็นโฟลเดอร์ dist
+        }
+    ]
+}

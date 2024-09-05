@@ -1,0 +1,299 @@
+body {
+    font-family: "Prompt", sans-serif;
+  }
+  
+  .card {
+    width: 363px;
+    height: 519px;
+    min-width: 300px;
+    background: #fff;
+    border-radius: 20px;
+    margin: 25px;
+    min-height: 356px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.08);
+    position: relative;
+    background-size: cover; /* Ensure the background image covers the card */
+    background-position: center; /* Position the background image in the center */
+    padding: 10px;
+  }
+  
+  .card:hover {
+    transform: translate(0, -10px);
+    box-shadow: 0px 17px 35px 0px rgba(0, 0, 0, 0.07);
+  }
+  
+  /* Unique background for each card */
+  .card:nth-child(1) {
+    background-image: url('img/Background (2).png');
+  }
+  
+  .card:nth-child(2) {
+    background-image: url('img/Background (3).png');
+  }
+  
+  .card:nth-child(3) {
+    background-image: url('img/Background (4).png');
+  }
+  
+  .card:nth-child(4) {
+    background-image: url('img/Background (5).png');
+  }
+  
+  .card:nth-child(5) {
+    background-image: url('img/Background (6).png');
+  }
+  
+  .card:nth-child(6) {
+    background-image: url('img/Background (7).png');
+  }
+
+  .card:nth-child(7) {
+    background-image: url('img/Background (8).png');
+  }
+  
+  .card:nth-child(8) {
+    background-image: url('img/Group 57.png');
+  }
+  
+  .card:nth-child(9) {
+    background-image: url('img/Background (9).png');
+  }
+  
+  .card-text {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 10px;
+}
+
+.icon-button {
+    background-color: #6C151A; /* พื้นหลังปุ่ม */
+    border: none;
+    border-radius: 50%; /* ทำให้ปุ่มเป็นวงกลม */
+    width: 40px; /* ขนาดปุ่ม */
+    height: 40px; /* ขนาดปุ่ม */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* เพิ่มเงา */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* เพิ่มเอฟเฟกต์ hover */
+    position: absolute; /* ปรับตำแหน่งให้แนบกับ container */
+    top: 10px; /* ระยะห่างจากขอบบน */
+    right: 10px; /* ระยะห่างจากขอบขวา */
+}
+
+
+.icon-button i {
+    color: #f44336; /* สีไอคอน */
+    font-size: 24px; /* ขนาดไอคอน */
+}
+
+.icon-button:hover {
+    background-color: #f44336; /* สีพื้นหลังเมื่อ hover */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* เพิ่มเงาเมื่อ hover */
+}
+
+.icon-button:hover i {
+    color: #fff; /* เปลี่ยนสีไอคอนเมื่อ hover */
+}
+
+
+.card-text .card-icon {
+    width: 40px; /* กำหนดขนาดรูปไอคอน */
+    height: 40px;
+    margin-right: 10px; /* ระยะห่างจากขอบซ้าย */
+}
+
+.card-text .text-content {
+    text-align: left; /* จัดข้อความให้อยู่ทางขวา */
+    color: #fff; /* สีข้อความ */
+}
+
+.card-text .text-content h2, 
+.card-text .text-content p {
+    margin: 0;
+}
+.card-text .text-content h2{
+    font-size: 20px;
+    color: #000;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.card-text .text-content p {
+    font-size: 15px ;
+    font-weight: 400;
+    color: #1d1d1d;
+   
+}
+
+
+  
+  .card h4 {
+    position:absolute;
+    left: 0;
+    top: 0;
+    padding: 15px;
+  }
+  
+  .card i {
+    position:absolute;
+    right: 0;
+    top: 0;
+    padding: 15px;
+    font-size:1.4rem;
+    line-height:3.2rem;
+  }
+  
+  .card .card-text {
+    padding: 20px;
+  }
+  
+  p {
+    font-size: .8rem;
+    opacity: .6;
+    margin-top: 10px;
+  }
+  
+  .card .card-img {
+    transform: translate(90px,-10px);
+    margin: 0 30px;
+    display:flex;
+    align-items: center;
+    justify-content:center;
+    transition: all .35s ease-out;
+  }
+  
+  .card img {
+    height:180px;
+  }
+  
+  .card img.blur {
+    position:absulute;
+    filter:blur(15px);
+    z-index:-1;
+    opacity:.40;
+    transform: translate(-160px,30px);
+    transition: all .35s ease-out;
+  }
+  
+  .card:hover .card-img {
+    transform:translate(70px,-15px);
+  }
+  
+  .card:hover .card-img img.blur {
+    transform:translate(-100px,35px) scale(.85);
+    opacity:.25;
+    filter:blur(20px);
+  }
+  
+  .card-content {
+    display:flex;
+    align-items:center;
+    justify-content:flex-start;
+    width:100%;
+    overflow:auto;
+    padding-right: 50px;
+    scroll-behavior:smooth;
+    margin-bottom: 100px;
+  }
+  
+  .card-content::-webkit-scrollbar {
+     height:0px;
+  }
+  
+  .card-content:after {
+    content:'';
+    display:block;
+    min-width:20px;
+    height:100px;
+    position:relative;
+  }
+  
+  .btn {
+    position: absolute;
+    bottom: 10px; /* ปรับให้ปุ่มชิดขอบการ์ดมากขึ้น */
+    right: 10px; /* ปรับให้ปุ่มชิดขอบการ์ดมากขึ้น */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #CECECE;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+   font-family: 15px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    margin: 5px; /* ลดขนาด margin เพื่อให้ชิดมากขึ้น */
+    transition: all 0.25s ease;
+    z-index: 10; /* ทำให้ปุ่มอยู่ด้านบนการ์ด */
+}
+
+#prev {
+    right: 70px; /* ปรับให้ปุ่ม prev อยู่ชิดซ้ายมากขึ้น */
+    bottom: 10px; /* ชิดกับการ์ดด้านล่าง */
+}
+
+#next {
+    right: 10px; /* ชิดขอบขวาของการ์ด */
+    bottom: 10px; /* ชิดขอบด้านล่าง */
+}
+
+  
+  .btn:hover {
+    background-color: rgba(0, 0, 0, 0.1); /* Add hover effect */
+  }
+  
+  .btn i {
+    font-size: 24px; /* Set icon size */
+    color: #000; /* Set icon color */
+  }
+  
+  
+  .slider {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    height: auto; /* ปรับให้ความสูงอัตโนมัติตามเนื้อหา */
+    
+}
+
+  
+  /* .slider:after {
+    content:'';
+    left:98px;
+    height:90vh;
+    position:absolute;
+    width:150px;
+    z-index:100;
+    background: linear-gradient(90deg, rgb(242,243,248) 0%,rgba(242,243,248,0)  100%);
+    pointer-event:none;
+  }
+  
+  .slider:before {
+    content:'';
+    right:98px;
+    height:90vh;
+    position:absolute;
+    width:150px;
+    z-index:100;
+    background: linear-gradient(90deg, rgba(242,243,248,0) 0%,rgba(242,243,248,1)  100%);
+    pointer-event:none;
+  } */
