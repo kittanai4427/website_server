@@ -275,25 +275,61 @@ body {
     
 }
 
-  
-  /* .slider:after {
-    content:'';
-    left:98px;
-    height:90vh;
-    position:absolute;
-    width:150px;
-    z-index:100;
-    background: linear-gradient(90deg, rgb(242,243,248) 0%,rgba(242,243,248,0)  100%);
-    pointer-event:none;
-  }
-  
-  .slider:before {
-    content:'';
-    right:98px;
-    height:90vh;
-    position:absolute;
-    width:150px;
-    z-index:100;
-    background: linear-gradient(90deg, rgba(242,243,248,0) 0%,rgba(242,243,248,1)  100%);
-    pointer-event:none;
-  } */
+/* ปรับสำหรับหน้าจอขนาดเล็ก (มือถือ) */
+@media (max-width: 767px) {
+    .card {
+        width: 90%; /* ปรับขนาดการ์ดให้เล็กลงเพื่อพอดีกับหน้าจอ */
+        height: auto; /* ปรับให้ความสูงอัตโนมัติตามเนื้อหา */
+        margin: 15px auto; /* จัดให้อยู่ตรงกลางหน้าจอ */
+        padding: 10px;
+    }
+
+    .card-text {
+        position: relative; /* ปรับให้การ์ดไม่ทับซ้อน */
+        bottom: 0;
+        padding: 15px;
+    }
+
+    .btn {
+        width: 40px; /* ลดขนาดปุ่ม */
+        height: 40px;
+        font-size: 18px;
+        bottom: 5px; /* ปรับตำแหน่งให้ห่างจากการ์ดด้านล่าง */
+        right: 5px; /* ปรับปุ่มให้ชิดขอบ */
+    }
+
+    #prev {
+        right: 60px; /* ปรับให้ปุ่ม prev อยู่ชิดซ้ายมากขึ้น */
+        bottom: 5px; /* ชิดกับการ์ดด้านล่าง */
+    }
+
+    #next {
+        right: 5px; /* ชิดขอบขวาของการ์ด */
+        bottom: 5px; /* ชิดขอบด้านล่าง */
+    }
+}
+
+/* ปรับสำหรับหน้าจอขนาดกลาง (แท็บเล็ต) */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .card {
+        width: 70%; /* ปรับขนาดการ์ดให้พอดีกับแท็บเล็ต */
+        height: auto;
+        margin: 20px auto;
+        margin-left: 14px;
+    }
+
+    .btn {
+        width: 45px;
+        height: 45px;
+        font-size: 20px;
+    }
+    
+
+    #prev {
+        right: 60px;
+    }
+
+    #next {
+        right: 15px;
+    }
+}
