@@ -66,7 +66,22 @@ body {
   .card:nth-child(9) {
     background-image: url('img/Background (9).png');
   }
-  
+  .transparent-card {
+    background-color: rgba(255, 255, 255, 0); /* โปร่งใส */
+
+    box-shadow: none; /* เอาเงาของการ์ดออก */
+    width: 100px; /* กำหนดความกว้าง */
+    height: 400px; /* กำหนดความสูง */
+    transition: all 0.3s ease; /* การเปลี่ยนแปลงนุ่มนวล */
+}
+
+.transparent-card:hover {
+    transform: none; /* ปิดการขยับเมื่อ hover */
+    box-shadow: none; /* ปิดเงาเมื่อ hover */
+}
+
+
+
   .card-text {
     position: absolute;
     bottom: 10px;
@@ -203,17 +218,18 @@ body {
     transform:translate(-100px,35px) scale(.85);
     opacity:.25;
     filter:blur(20px);
-    max-width: ;
+  
   }
   
   .card-content {
     display: flex;
     justify-content: start;
-    width: 100vw; /* ขยายความกว้างของ card-content ให้เต็มหน้าจอ */
-    overflow-x: auto; /* ทำให้คอนเทนเนอร์เลื่อนในแนวนอนได้ */
-    scroll-behavior: smooth; /* เพิ่มความลื่นไหลของการเลื่อน */
-    padding: 0 20px; /* เพิ่ม padding เพื่อไม่ให้ชิดขอบหน้าจอเกินไป */
-    gap: 20px; /* ช่องว่างระหว่างการ์ด */
+    width: 100vw;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 0 20px;
+    gap: 20px;
+    box-sizing: border-box;
 }
   .card-content::-webkit-scrollbar {
      height:0px;
@@ -263,11 +279,11 @@ body {
 }
 
 #next {
-    right: 10px; /* ปุ่ม next อยู่ชิดขอบขวา */
+    right: 40px; /* ปุ่ม next อยู่ชิดขอบขวา */
 }
 
 #prev {
-    right: 70px; /* ปุ่ม prev อยู่ทางซ้ายของ next ชิดกัน */
+    right: 100px; /* ปุ่ม prev อยู่ทางซ้ายของ next ชิดกัน */
 }
 
 
