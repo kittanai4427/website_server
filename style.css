@@ -1,8 +1,15 @@
 body {
     font-family: "Prompt", sans-serif;
   }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px; /* เพิ่ม padding เพื่อให้มีพื้นที่เล็กน้อยระหว่างขอบ */
+}
   
-  .card {
+.card {
+    flex-grow: 0; /* ทำให้การ์ดขยายได้ตามขนาดคอนเทนเนอร์ */
     width: 363px;
     height: 519px;
     min-width: 300px;
@@ -17,8 +24,7 @@ body {
     background-size: cover; /* Ensure the background image covers the card */
     background-position: center; /* Position the background image in the center */
     padding: 10px;
-  }
-  
+}
   .card:hover {
     transform: translate(0, -10px);
     box-shadow: 0px 17px 35px 0px rgba(0, 0, 0, 0.07);
@@ -197,19 +203,18 @@ body {
     transform:translate(-100px,35px) scale(.85);
     opacity:.25;
     filter:blur(20px);
+    max-width: ;
   }
   
   .card-content {
-    display:flex;
-    align-items:center;
-    justify-content:flex-start;
-    width:100%;
-    overflow:auto;
-    padding-right: 50px;
-    scroll-behavior:smooth;
-    margin-bottom: 100px;
-  }
-  
+    display: flex;
+    justify-content: start;
+    width: 100vw; /* ขยายความกว้างของ card-content ให้เต็มหน้าจอ */
+    overflow-x: auto; /* ทำให้คอนเทนเนอร์เลื่อนในแนวนอนได้ */
+    scroll-behavior: smooth; /* เพิ่มความลื่นไหลของการเลื่อน */
+    padding: 0 20px; /* เพิ่ม padding เพื่อไม่ให้ชิดขอบหน้าจอเกินไป */
+    gap: 20px; /* ช่องว่างระหว่างการ์ด */
+}
   .card-content::-webkit-scrollbar {
      height:0px;
   }
@@ -242,15 +247,30 @@ body {
     z-index: 10; /* ทำให้ปุ่มอยู่ด้านบนการ์ด */
 }
 
-#prev {
-    right: 70px; /* ปรับให้ปุ่ม prev อยู่ชิดซ้ายมากขึ้น */
-    bottom: 10px; /* ชิดกับการ์ดด้านล่าง */
+#prev, #next {
+    position: absolute;
+    bottom: 10px; /* ปุ่มอยู่ชิดขอบล่าง */
+    width: 50px;
+    height: 50px;
+    background-color: #CECECE;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    z-index: 10; /* ทำให้ปุ่มอยู่ด้านบน */
 }
 
 #next {
-    right: 10px; /* ชิดขอบขวาของการ์ด */
-    bottom: 10px; /* ชิดขอบด้านล่าง */
+    right: 10px; /* ปุ่ม next อยู่ชิดขอบขวา */
 }
+
+#prev {
+    right: 70px; /* ปุ่ม prev อยู่ทางซ้ายของ next ชิดกัน */
+}
+
+
 
   
   .btn:hover {
@@ -265,15 +285,16 @@ body {
   
   .slider {
     display: flex;
-    align-items: flex-end;
-    justify-content: center;
+    flex-direction: column; /* จัดเรียงแนวตั้ง */
+    align-items: center;
+    justify-content: flex-start;
     width: 100%;
-    overflow: hidden;
+    height: auto; /* ปรับความสูงอัตโนมัติตามเนื้อหา */
     position: relative;
-    height: auto;
-    z-index: 1;
-    height: 100vh;
+    overflow: hidden;
+    padding-bottom: 90px; /* เพิ่มพื้นที่ด้านล่างเพื่อไม่ให้ปุ่มติดขอบ */
 }
+
 
 .slider::before {
     content: '';
@@ -281,7 +302,7 @@ body {
     top: 0;
     left: 0;
     width: 100%; /* ส่วนพื้นหลังที่เหลือ 60% ทางซ้าย */
-    height: 90%;
+    height: 95%;
     background-color: #F6F7F6; /* สีพื้นหลังสีน้ำเงินอ่อน */
     z-index: -1; /* ให้พื้นหลังอยู่ด้านล่างของเนื้อหา */
 }
@@ -289,9 +310,9 @@ body {
 .slider::after {
     content: '';
     position: absolute;
-    top: 10%;
+    top: 5%;
     right: 0;
-    width: 65%; /* ครอบคลุม 65% ของพื้นที่ด้านขวา */
+    width: 55%; /* ครอบคลุม 65% ของพื้นที่ด้านขวา */
     height: 100%;
     background-image: url('img/Group 388.png'); /* ใส่ URL ของรูปภาพที่คุณต้องการ */
     background-size: cover; /* ปรับขนาดรูปให้ครอบคลุมพื้นที่ */
@@ -299,32 +320,30 @@ body {
     background-repeat: no-repeat; /* ไม่ให้ภาพซ้ำ */
     z-index: -1; /* ให้พื้นหลังอยู่ด้านล่างของเนื้อหา */
 }
+/*  */
 .slider-text {
     display: flex;
-    justify-content: space-between; /* จัดข้อความให้อยู่ฝั่งซ้ายและขวา */
-    position: absolute;
-    top: 10%; /* ปรับตำแหน่งจากด้านบน */
-    left: 0;
-    width: 100%; /* ให้ความกว้างครอบคลุมทั้งหมด */
-    padding: 0 5%; /* เพิ่ม padding เพื่อให้ข้อความไม่ชิดขอบ */
-    color: #fff; /* สีข้อความ */
-    z-index: 1; /* ให้ข้อความอยู่เหนือพื้นหลัง */
+    justify-content: space-between;
+    width: 100%;
+    padding: 20px 5%;
+    z-index: 1;
 }
 
 .left-text {
     text-align: left; /* จัดข้อความให้อยู่ทางซ้าย */
     margin-top: 10px;
     color: #000;
+
 }
 
 .right-text {
     position: absolute;
     right: 5%; /* ปรับให้ข้อความอยู่ภายในพื้นที่ของ .slider::after */
-    top: 10%; /* ปรับตำแหน่งจากด้านบน */
+    top: 9%; /* ปรับตำแหน่งจากด้านบน */
     text-align: left; /* จัดข้อความให้อยู่ทางซ้าย */
     color: #fff; /* สีของข้อความ */
     z-index: 1; /* ให้ข้อความอยู่เหนือภาพพื้นหลัง */
-    width: 55%; /* ขยายความกว้างให้เหมาะสม */
+    width: 45%; /* ขยายความกว้างให้เหมาะสม */
     padding-left: 20px; /* เพิ่มพื้นที่ห่างจากขอบ */
 }
 
@@ -337,63 +356,62 @@ body {
 
 .slider-text p {
     font-size: 18px; /* ขนาดของคำบรรยาย */
-    margin: 37px 0 0;
+
+    font-weight: 300;
+    color: #ffffff;
 }
+
+#free-consult {
+    position: absolute;
+    left: 45%; 
+    margin-left: 50px;
+    background-color: #ffffff;
+    color: #000000;
+    border-radius: 50px;
+    padding: 5px 20px; /* ปรับ padding ให้ลดความสูงของปุ่ม */
+    font-size: 16px;
+    height: 40px; /* กำหนดความสูงของปุ่ม */
+    cursor: pointer;
+    z-index: 1; /* ให้อยู่เหนือพื้นหลัง */
+    border: none;
+    outline: none;
+    transition: all 0.25s ease;
+    width: 170px;
+    display: flex; /* ใช้ flexbox เพื่อจัดข้อความและไอคอน */
+    align-items: center; /* จัดให้ตรงกลางในแนวตั้ง */
+    justify-content: space-between; /* จัดข้อความและไอคอนให้อยู่ฝั่งซ้าย-ขวา */
+    font-family: "Prompt", sans-serif;
+}
+
+#free-consult i {
+    font-size: 20px; /* ขนาดไอคอน */
+    margin-left: 10px; /* ระยะห่างระหว่างข้อความกับไอคอน */
+}
+
+#free-consult:hover {
+    background-color: #6C151A;
+    color: #fff;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+
 
 /* ปรับสำหรับหน้าจอขนาดเล็ก (มือถือ) */
 @media (max-width: 767px) {
     .card {
-        width: 90%; /* ปรับขนาดการ์ดให้เล็กลงเพื่อพอดีกับหน้าจอ */
+        width: calc(50% - 20px); /* ปรับขนาดการ์ดให้แสดง 2 การ์ดต่อแถว */
         height: auto; /* ปรับให้ความสูงอัตโนมัติตามเนื้อหา */
-        margin: 15px auto; /* จัดให้อยู่ตรงกลางหน้าจอ */
-        padding: 10px;
+        margin: 10px; /* เพิ่มระยะห่างเล็กน้อยระหว่างการ์ด */
     }
 
-    .card-text {
-        position: relative; /* ปรับให้การ์ดไม่ทับซ้อน */
-        bottom: 0;
-        padding: 15px;
+    .card-content {
+        display: flex;
+        padding: 0 10px; /* ลด padding ให้พอดีกับหน้าจอมือถือ */
+        gap: 10px; /* เพิ่มช่องว่างระหว่างการ์ด */
     }
 
-    .btn {
-        width: 40px; /* ลดขนาดปุ่ม */
-        height: 40px;
-        font-size: 18px;
-        bottom: 5px; /* ปรับตำแหน่งให้ห่างจากการ์ดด้านล่าง */
-        right: 5px; /* ปรับปุ่มให้ชิดขอบ */
-    }
-
-    #prev {
-        right: 60px; /* ปรับให้ปุ่ม prev อยู่ชิดซ้ายมากขึ้น */
-        bottom: 5px; /* ชิดกับการ์ดด้านล่าง */
-    }
-
-    #next {
-        right: 5px; /* ชิดขอบขวาของการ์ด */
-        bottom: 5px; /* ชิดขอบด้านล่าง */
-    }
-}
-
-/* ปรับสำหรับหน้าจอขนาดกลาง (แท็บเล็ต) */
-@media (min-width: 768px) and (max-width: 1023px) {
-    .card {
-        width: 70%; /* ปรับขนาดการ์ดให้พอดีกับแท็บเล็ต */
-        height: auto;
-        margin: 20px auto;
-    }
-
-    .btn {
-        width: 45px;
-        height: 45px;
-        font-size: 20px;
-    }
-    
-
-    #prev {
-        right: 60px;
-    }
-
-    #next {
-        right: 15px;
+    #prev, #next {
+        width: 35px; /* ปรับขนาดปุ่ม */
+        height: 35px;
+        font-size: 16px; /* ลดขนาดไอคอน */
     }
 }
