@@ -1,15 +1,15 @@
 body {
     font-family: "Prompt", sans-serif;
-  }
+}
 
-  .container {
+.container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px; /* เพิ่ม padding เพื่อให้มีพื้นที่เล็กน้อยระหว่างขอบ */
+    padding: 0 20px;
 }
-  
+
 .card {
-    flex-grow: 0; /* ทำให้การ์ดขยายได้ตามขนาดคอนเทนเนอร์ */
+    flex-grow: 0;
     width: 363px;
     height: 519px;
     min-width: 300px;
@@ -21,68 +21,66 @@ body {
     transition: all 0.25s ease;
     box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.08);
     position: relative;
-    background-size: cover; /* Ensure the background image covers the card */
-    background-position: center; /* Position the background image in the center */
+    background-size: cover;
+    background-position: center;
     padding: 10px;
 }
-  .card:hover {
+
+.card:hover {
     transform: translate(0, -10px);
     box-shadow: 0px 17px 35px 0px rgba(0, 0, 0, 0.07);
-  }
-  
-  /* Unique background for each card */
-  .card:nth-child(1) {
+}
+
+.card:nth-child(1) {
     background-image: url('img/Background (2).png');
-  }
-  
-  .card:nth-child(2) {
+}
+
+.card:nth-child(2) {
     background-image: url('img/Background (3).png');
-  }
-  
-  .card:nth-child(3) {
+}
+
+.card:nth-child(3) {
     background-image: url('img/Background (4).png');
-  }
-  
-  .card:nth-child(4) {
+}
+
+.card:nth-child(4) {
     background-image: url('img/Background (5).png');
-  }
-  
-  .card:nth-child(5) {
+}
+
+.card:nth-child(5) {
     background-image: url('img/Background (6).png');
-  }
-  
-  .card:nth-child(6) {
+}
+
+.card:nth-child(6) {
     background-image: url('img/Background (7).png');
-  }
+}
 
-  .card:nth-child(7) {
+.card:nth-child(7) {
     background-image: url('img/Background (8).png');
-  }
-  
-  .card:nth-child(8) {
-    background-image: url('img/Group 57.png');
-  }
-  
-  .card:nth-child(9) {
-    background-image: url('img/Background (9).png');
-  }
-  .transparent-card {
-    background-color: rgba(255, 255, 255, 0); /* โปร่งใส */
+}
 
-    box-shadow: none; /* เอาเงาของการ์ดออก */
-    width: 100px; /* กำหนดความกว้าง */
-    height: 400px; /* กำหนดความสูง */
-    transition: all 0.3s ease; /* การเปลี่ยนแปลงนุ่มนวล */
+.card:nth-child(8) {
+    background-image: url('img/Group 57.png');
+}
+
+.card:nth-child(9) {
+    background-image: url('img/Background (9).png');
+}
+
+.transparent-card {
+    background-color: rgba(255, 255, 255, 0);
+    box-shadow: none;
+    width: 100px;
+    height: 400px;
+    transition: all 0.3s ease;
 }
 
 .transparent-card:hover {
-    transform: none; /* ปิดการขยับเมื่อ hover */
-    box-shadow: none; /* ปิดเงาเมื่อ hover */
+    transform: none;
+    box-shadow: none;
 }
 
-
-
-  .card-text {
+.card-text {
     position: absolute;
     bottom: 10px;
     left: 10px;
@@ -99,54 +97,53 @@ body {
 }
 
 .icon-button {
-    background-color: #6C151A; /* พื้นหลังปุ่ม */
+    background-color: #6C151A;
     border: none;
-    border-radius: 50%; /* ทำให้ปุ่มเป็นวงกลม */
-    width: 40px; /* ขนาดปุ่ม */
-    height: 40px; /* ขนาดปุ่ม */
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* เพิ่มเงา */
-    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* เพิ่มเอฟเฟกต์ hover */
-    position: absolute; /* ปรับตำแหน่งให้แนบกับ container */
-    top: 10px; /* ระยะห่างจากขอบบน */
-    right: 10px; /* ระยะห่างจากขอบขวา */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    position: absolute;
+    top: 10px;
+    right: 10px;
 }
 
-
 .icon-button i {
-    color: #f44336; /* สีไอคอน */
-    font-size: 24px; /* ขนาดไอคอน */
+    color: #f44336;
+    font-size: 24px;
 }
 
 .icon-button:hover {
-    background-color: #f44336; /* สีพื้นหลังเมื่อ hover */
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* เพิ่มเงาเมื่อ hover */
+    background-color: #f44336;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .icon-button:hover i {
-    color: #fff; /* เปลี่ยนสีไอคอนเมื่อ hover */
+    color: #fff;
 }
 
-
 .card-text .card-icon {
-    width: 40px; /* กำหนดขนาดรูปไอคอน */
+    width: 40px;
     height: 40px;
-    margin-right: 10px; /* ระยะห่างจากขอบซ้าย */
+    margin-right: 10px;
 }
 
 .card-text .text-content {
-    text-align: left; /* จัดข้อความให้อยู่ทางขวา */
-    color: #fff; /* สีข้อความ */
+    text-align: left;
+    color: #fff;
 }
 
-.card-text .text-content h2, 
+.card-text .text-content h2,
 .card-text .text-content p {
     margin: 0;
 }
-.card-text .text-content h2{
+
+.card-text .text-content h2 {
     font-size: 20px;
     color: #000;
     font-weight: 500;
@@ -154,74 +151,70 @@ body {
 }
 
 .card-text .text-content p {
-    font-size: 15px ;
+    font-size: 15px;
     font-weight: 400;
     color: #1d1d1d;
-   
 }
 
-
-  
-  .card h4 {
-    position:absolute;
+.card h4 {
+    position: absolute;
     left: 0;
     top: 0;
     padding: 15px;
-  }
-  
-  .card i {
-    position:absolute;
+}
+
+.card i {
+    position: absolute;
     right: 0;
     top: 0;
     padding: 15px;
-    font-size:1.4rem;
-    line-height:3.2rem;
-  }
-  
-  .card .card-text {
+    font-size: 1.4rem;
+    line-height: 3.2rem;
+}
+
+.card .card-text {
     padding: 20px;
-  }
-  
-  p {
+}
+
+p {
     font-size: .8rem;
     opacity: .6;
     margin-top: 10px;
-  }
-  
-  .card .card-img {
-    transform: translate(90px,-10px);
+}
+
+.card .card-img {
+    transform: translate(90px, -10px);
     margin: 0 30px;
-    display:flex;
+    display: flex;
     align-items: center;
-    justify-content:center;
+    justify-content: center;
     transition: all .35s ease-out;
-  }
-  
-  .card img {
-    height:180px;
-  }
-  
-  .card img.blur {
-    position:absulute;
-    filter:blur(15px);
-    z-index:-1;
-    opacity:.40;
-    transform: translate(-160px,30px);
+}
+
+.card img {
+    height: 180px;
+}
+
+.card img.blur {
+    position: absulute;
+    filter: blur(15px);
+    z-index: -1;
+    opacity: .40;
+    transform: translate(-160px, 30px);
     transition: all .35s ease-out;
-  }
-  
-  .card:hover .card-img {
-    transform:translate(70px,-15px);
-  }
-  
-  .card:hover .card-img img.blur {
-    transform:translate(-100px,35px) scale(.85);
-    opacity:.25;
-    filter:blur(20px);
-  
-  }
-  
-  .card-content {
+}
+
+.card:hover .card-img {
+    transform: translate(70px, -15px);
+}
+
+.card:hover .card-img img.blur {
+    transform: translate(-100px, 35px) scale(.85);
+    opacity: .25;
+    filter: blur(20px);
+}
+
+.card-content {
     display: flex;
     justify-content: start;
     width: 100vw;
@@ -231,22 +224,23 @@ body {
     gap: 20px;
     box-sizing: border-box;
 }
-  .card-content::-webkit-scrollbar {
-     height:0px;
-  }
-  
-  .card-content:after {
-    content:'';
-    display:block;
-    min-width:20px;
-    height:100px;
-    position:relative;
-  }
-  
-  .btn {
+
+.card-content::-webkit-scrollbar {
+    height: 0px;
+}
+
+.card-content:after {
+    content: '';
+    display: block;
+    min-width: 20px;
+    height: 100px;
+    position: relative;
+}
+
+.btn {
     position: absolute;
-    bottom: 10px; /* ปรับให้ปุ่มชิดขอบการ์ดมากขึ้น */
-    right: 10px; /* ปรับให้ปุ่มชิดขอบการ์ดมากขึ้น */
+    bottom: 10px;
+    right: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -254,18 +248,18 @@ body {
     border-radius: 50%;
     width: 50px;
     height: 50px;
-   font-family: 15px;
+    font-family: 15px;
     cursor: pointer;
     border: none;
     outline: none;
-    margin: 5px; /* ลดขนาด margin เพื่อให้ชิดมากขึ้น */
+    margin: 5px;
     transition: all 0.25s ease;
-    z-index: 10; /* ทำให้ปุ่มอยู่ด้านบนการ์ด */
+    z-index: 10;
 }
 
 #prev, #next {
     position: absolute;
-    bottom: 10px; /* ปุ่มอยู่ชิดขอบล่าง */
+    bottom: 10px;
     width: 50px;
     height: 50px;
     background-color: #CECECE;
@@ -275,52 +269,47 @@ body {
     justify-content: center;
     cursor: pointer;
     transition: all 0.25s ease;
-    z-index: 10; /* ทำให้ปุ่มอยู่ด้านบน */
+    z-index: 10;
 }
 
 #next {
-    right: 40px; /* ปุ่ม next อยู่ชิดขอบขวา */
+    right: 40px;
 }
 
 #prev {
-    right: 100px; /* ปุ่ม prev อยู่ทางซ้ายของ next ชิดกัน */
+    right: 100px;
 }
 
+.btn:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
 
+.btn i {
+    font-size: 24px;
+    color: #000;
+}
 
-  
-  .btn:hover {
-    background-color: rgba(0, 0, 0, 0.1); /* Add hover effect */
-  }
-  
-  .btn i {
-    font-size: 24px; /* Set icon size */
-    color: #000; /* Set icon color */
-  }
-  
-  
-  .slider {
+.slider {
     display: flex;
-    flex-direction: column; /* จัดเรียงแนวตั้ง */
+    flex-direction: column;
     align-items: center;
     justify-content: flex-start;
     width: 100%;
-    height: auto; /* ปรับความสูงอัตโนมัติตามเนื้อหา */
+    height: auto;
     position: relative;
     overflow: hidden;
-    padding-bottom: 90px; /* เพิ่มพื้นที่ด้านล่างเพื่อไม่ให้ปุ่มติดขอบ */
+    padding-bottom: 90px;
 }
-
 
 .slider::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%; /* ส่วนพื้นหลังที่เหลือ 60% ทางซ้าย */
+    width: 100%;
     height: 95%;
-    background-color: #F6F7F6; /* สีพื้นหลังสีน้ำเงินอ่อน */
-    z-index: -1; /* ให้พื้นหลังอยู่ด้านล่างของเนื้อหา */
+    background-color: #F6F7F6;
+    z-index: -1;
 }
 
 .slider::after {
@@ -328,15 +317,15 @@ body {
     position: absolute;
     top: 5%;
     right: 0;
-    width: 55%; /* ครอบคลุม 65% ของพื้นที่ด้านขวา */
+    width: 55%;
     height: 100%;
-    background-image: url('img/Group 388.png'); /* ใส่ URL ของรูปภาพที่คุณต้องการ */
-    background-size: cover; /* ปรับขนาดรูปให้ครอบคลุมพื้นที่ */
-    background-position: center; /* จัดรูปภาพให้อยู่ตรงกลาง */
-    background-repeat: no-repeat; /* ไม่ให้ภาพซ้ำ */
-    z-index: -1; /* ให้พื้นหลังอยู่ด้านล่างของเนื้อหา */
+    background-image: url('img/Group 388.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1;
 }
-/*  */
+
 .slider-text {
     display: flex;
     justify-content: space-between;
@@ -346,62 +335,60 @@ body {
 }
 
 .left-text {
-    text-align: left; /* จัดข้อความให้อยู่ทางซ้าย */
+    text-align: left;
     margin-top: 10px;
     color: #000;
-
 }
 
 .right-text {
     position: absolute;
-    right: 5%; /* ปรับให้ข้อความอยู่ภายในพื้นที่ของ .slider::after */
-    top: 9%; /* ปรับตำแหน่งจากด้านบน */
-    text-align: left; /* จัดข้อความให้อยู่ทางซ้าย */
-    color: #fff; /* สีของข้อความ */
-    z-index: 1; /* ให้ข้อความอยู่เหนือภาพพื้นหลัง */
-    width: 45%; /* ขยายความกว้างให้เหมาะสม */
-    padding-left: 20px; /* เพิ่มพื้นที่ห่างจากขอบ */
+    right: 5%;
+    top: 9%;
+    text-align: left;
+    color: #fff;
+    z-index: 1;
+    width: 45%;
+    padding-left: 20px;
 }
 
 .left-text h1 {
-    font-size: 100px; /* ขนาดของข้อความหัวเรื่อง */
+    font-size: 100px;
     margin: 0;
     font-weight: 500;
     color: #5D5D5E;
 }
 
 .slider-text p {
-    font-size: 18px; /* ขนาดของคำบรรยาย */
-
+    font-size: 18px;
     font-weight: 300;
     color: #ffffff;
 }
 
 #free-consult {
     position: absolute;
-    left: 45%; 
+    left: 45%;
     margin-left: 50px;
     background-color: #ffffff;
     color: #000000;
     border-radius: 50px;
-    padding: 5px 20px; /* ปรับ padding ให้ลดความสูงของปุ่ม */
+    padding: 5px 20px;
     font-size: 16px;
-    height: 40px; /* กำหนดความสูงของปุ่ม */
+    height: 40px;
     cursor: pointer;
-    z-index: 1; /* ให้อยู่เหนือพื้นหลัง */
+    z-index: 1;
     border: none;
     outline: none;
     transition: all 0.25s ease;
     width: 170px;
-    display: flex; /* ใช้ flexbox เพื่อจัดข้อความและไอคอน */
-    align-items: center; /* จัดให้ตรงกลางในแนวตั้ง */
-    justify-content: space-between; /* จัดข้อความและไอคอนให้อยู่ฝั่งซ้าย-ขวา */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     font-family: "Prompt", sans-serif;
 }
 
 #free-consult i {
-    font-size: 20px; /* ขนาดไอคอน */
-    margin-left: 10px; /* ระยะห่างระหว่างข้อความกับไอคอน */
+    font-size: 20px;
+    margin-left: 10px;
 }
 
 #free-consult:hover {
@@ -410,24 +397,22 @@ body {
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-
-/* ปรับสำหรับหน้าจอขนาดเล็ก (มือถือ) */
 @media (max-width: 767px) {
     .card {
-        width: calc(50% - 20px); /* ปรับขนาดการ์ดให้แสดง 2 การ์ดต่อแถว */
-        height: auto; /* ปรับให้ความสูงอัตโนมัติตามเนื้อหา */
-        margin: 10px; /* เพิ่มระยะห่างเล็กน้อยระหว่างการ์ด */
+        width: calc(50% - 20px);
+        height: auto;
+        margin: 10px;
     }
 
     .card-content {
         display: flex;
-        padding: 0 10px; /* ลด padding ให้พอดีกับหน้าจอมือถือ */
-        gap: 10px; /* เพิ่มช่องว่างระหว่างการ์ด */
+        padding: 0 10px;
+        gap: 10px;
     }
 
     #prev, #next {
-        width: 35px; /* ปรับขนาดปุ่ม */
+        width: 35px;
         height: 35px;
-        font-size: 16px; /* ลดขนาดไอคอน */
+        font-size: 16px;
     }
 }

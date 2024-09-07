@@ -3,10 +3,10 @@ const prev = document.querySelector('#prev');
 
 function handleScrollNext() {
   const cards = document.querySelector('.card-content');
-  const cardWidth = cards.querySelector('.card').offsetWidth + 20; // ความกว้างของการ์ดรวม gap
-  const maxScrollLeft = cards.scrollWidth - cards.clientWidth; // ค่าการเลื่อนสูงสุด
+  const cardWidth = cards.querySelector('.card').offsetWidth + 20; 
+  const maxScrollLeft = cards.scrollWidth - cards.clientWidth; 
   
-  // ตรวจสอบและปรับให้เลื่อนไปจนสุดถ้าจำเป็น
+
   if (cards.scrollLeft + cardWidth >= maxScrollLeft) {
     cards.scrollTo({
       top: 0,
@@ -24,9 +24,9 @@ function handleScrollNext() {
 
 function handleScrollPrev() {
   const cards = document.querySelector('.card-content');
-  const cardWidth = cards.querySelector('.card').offsetWidth + 20; // ความกว้างของการ์ดรวม gap
+  const cardWidth = cards.querySelector('.card').offsetWidth + 20; 
   
-  // ตรวจสอบว่าหลังจากเลื่อนแล้วจะเลื่อนน้อยกว่าศูนย์หรือไม่
+
   if (cards.scrollLeft - cardWidth <= 0) {
     cards.scrollTo({
       top: 0,
